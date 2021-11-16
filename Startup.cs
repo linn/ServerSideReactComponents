@@ -52,9 +52,12 @@ namespace ServerSideReactComponents
             app.UseHttpsRedirection();
 
             // Initialise ReactJS.NET. Must be before static files.
-            app.UseReact(config =>
-                {
-                });
+            app.UseReact(
+                config =>
+                    {
+                        config.SetReuseJavaScriptEngines(true).SetLoadBabel(true).SetLoadReact(true)
+                            .SetReactAppBuildPath("~/dist");
+                    });
 
             app.UseStaticFiles();
 
@@ -62,15 +65,7 @@ namespace ServerSideReactComponents
 
             app.UseAuthorization();
 
-            app.UseMvc(routes =>
-                {
-                    routes.MapRoute(
-                        name: "default",
-                        template: "{controller=Home}/{action=Index}");
-                });
-
-            ReactSiteConfiguration.Configuration = new ReactSiteConfiguration()
-                .AddScript("~/Components/Sample.jsx");
+            app.UseMvc(routes => { routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}"); });
         }
     }
 }
