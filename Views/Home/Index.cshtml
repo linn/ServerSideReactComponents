@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+@model Person
+
+<html>
+<head>
+    <title>Hello React</title>
+</head>
+<body>
+    @Html.React("Sample", new
+                                  {
+                                      name = Model.Name
+                                  })
+</body>
+</html>
