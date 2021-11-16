@@ -76,3 +76,6 @@ local-update.sh
 
 # StyleCop caches
 *StyleCop.Cache
+
+#webpack builds
+wwwroot/dist/*
