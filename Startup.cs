@@ -65,6 +65,7 @@ namespace ServerSideReactComponents
 
             app.UseAuthorization();
 
+            // todo - better routing?
             app.UseMvc(routes => { routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}"); });
         }
     }
