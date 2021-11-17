@@ -1,16 +1,13 @@
-﻿@{
-    Layout = null;
-}
-@model Person
+﻿
+@model ServerSideReactComponents.Person
 
-<html>
-<head>
-    <title>Hello React</title>
-</head>
-<body>
-    @Html.React("Sample", new
-                                  {
-                                      name = Model.Name
-                                  })
-</body>
-</html>
+@using React.AspNet
+
+@{
+    Layout = "_Layout";
+   
+}
+
+@Html.React("Components.Sample", new { name = Model.Name })
+@{
+}
