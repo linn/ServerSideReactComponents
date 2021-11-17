@@ -27,11 +27,16 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
+				test: /\.js?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 			},
-		],
+			{
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+			}		
+		]
 	},
 	plugins: [
 		new WebpackManifestPlugin({

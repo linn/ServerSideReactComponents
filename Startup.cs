@@ -55,7 +55,7 @@ namespace ServerSideReactComponents
             app.UseReact(
                 config =>
                     {
-                        config.SetReuseJavaScriptEngines(true).SetLoadBabel(true).SetLoadReact(true)
+                        config.SetReuseJavaScriptEngines(false).SetLoadBabel(false).SetLoadReact(true)
                             .SetReactAppBuildPath("~/dist");
                     });
 
@@ -65,8 +65,8 @@ namespace ServerSideReactComponents
 
             app.UseAuthorization();
 
-            // todo - better routing?
             app.UseMvc(routes => { routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}"); });
         }
     }
 }
+
