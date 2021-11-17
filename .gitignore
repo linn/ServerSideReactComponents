@@ -79,3 +79,4 @@ local-update.sh
 
 #webpack builds
 wwwroot/dist/*
+build/*
